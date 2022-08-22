@@ -9,7 +9,7 @@ y en el mismo orden.
 lista = ["casa", "perro", "pato", "gato"]
 
 # COMPLETAR - INICIO
-tupla = "casa", "perro", "pato", "gato" 
+tupla = tuple(lista)
 # COMPLETAR - FIN
 
 assert tupla == ("casa", "perro", "pato", "gato")
@@ -23,7 +23,7 @@ y en el mismo orden.
 tupla = "casa", "perro", "pato", "gato", "tenedor"
 
 # COMPLETAR - INICIO
-lista[:] = tupla
+lista = list(tupla)
 # COMPLETAR - FIN
 
 assert lista == ["casa", "perro", "pato", "gato", "tenedor"]
@@ -36,7 +36,7 @@ Desempaquetar la siguiente tupla en las variables a, b y c
 tupla = ("primer", 25, [1, 2, 3])
 
 # COMPLETAR - INICIO
-a,b,c = ("primer", 25,[1,2,3])
+(a,b,c) = tupla
 # COMPLETAR - FIN
 
 assert a == "primer" and b == 25 and c == [1, 2, 3]
@@ -64,8 +64,10 @@ Restricción: Utilizar f-Strings.
 lista = ["esta", "mañana", "sali", "a", "correr"]
 
 # COMPLETAR - INICIO
-a, b, c, d, e = lista
-string_concatenado =  "esta" + "mañana" + "sali" + "a" + "correr"
+(a, b, c, d, e) = lista
+
+string_concatenado =  f'{a} {b} {c} {d} {e}'
+
 # COMPLETAR - FIN
 
 assert string_concatenado == "esta mañana sali a correr"
@@ -79,7 +81,7 @@ Restricción: Utilizar desempaquetado con comodines
 tupla = (73, 45, 344, 3434, 2)
 
 # COMPLETAR - INICIO
-
+(primer,*resto) = tupla
 # COMPLETAR - FIN
 
 assert primer == 73
@@ -93,7 +95,8 @@ Restricción: Utilizar desempaquetado con comodines
 lista = [73, 45, 344, 3434, 2]
 
 # COMPLETAR - INICIO
-
+(a,*rest,e) = lista
+suma = a+e
 # COMPLETAR - FIN
 
 assert suma == 75
@@ -108,7 +111,8 @@ Restricción: Utilizar desempaquetado con comodines y f-Strings
 tupla = ("anoche", "fui", "a", "la", "fiesta", "pero", "no", "pude", "entrar")
 
 # COMPLETAR - INICIO
-
+(a,b,c,d,e,*resto) = tupla
+string_concatenado = f'{a} {b} {c} {d} {e}'
 # COMPLETAR - FIN
 
 assert string_concatenado == "anoche fui a la fiesta"
